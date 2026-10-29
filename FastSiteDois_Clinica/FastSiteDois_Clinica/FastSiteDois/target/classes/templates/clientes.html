@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes Cadastrados</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<header class="site-header">
+    <span class="site-header-titulo">Clínica Médica</span>
+</header>
+<div class="pagina-cadastro">
+
+
+    <div class="lista-block">
+        <h2>Clientes cadastrados
+        </h2>
+
+        <div class="tabela-scroll">
+            <table class="tabela-clientes">
+                <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Endereço</th>
+                    <th>CEP</th>
+                    <th>N</th>
+                    <th>Telefone</th>
+                    <th>Observação</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="c : ${clientes}">
+                    <td th:text="${c.nome}"></td>
+                    <td th:text="${c.endereco}"></td>
+                    <td th:text="${c.cep}"></td>
+                    <td th:text="${c.numero}"></td>
+                    <td th:text="${c.telefone}"></td>
+                    <td th:text="${c.observacao}"></td>
+                </tr>
+                <tr th:if="${#lists.isEmpty(clientes)}">
+                    <td colspan="6" class="lista-vazia">Nenhum cliente cadastrado.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <a th:href="@{/home}" class="botao-link botao-voltar">Voltar</a>
+    </div>
+
+</div>
+</body>
+</html>

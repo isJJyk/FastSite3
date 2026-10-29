@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Cadastro</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<header class="site-header">
+    <span class="site-header-titulo">Clínica Médica</span>
+</header>
+<div class="pagina-cadastro">
+
+    <div class="container text-center login-block">
+        <div>
+            <h2>João Gabriel De Sá Menezes</h2>
+        </div>
+        <div class="">
+            <form th:action="@{/cadastrar}" th:object="${cliente}" method="post">
+                <label for="login">Login:</label>
+                <input type="text" id="login" th:field="*{login}" required maxlength="100"
+                       placeholder="Digite o Login">
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" th:field="*{senha}" required maxlength="100"
+                       placeholder="Digite a Senha">
+
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" th:field="*{nome}" required maxlength="100"
+                       placeholder="Digite o Nome">
+
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" th:field="*{endereco}" required maxlength="100"
+                       placeholder="Digite o Endereço">
+
+                <label for="cep">CEP:</label>
+                <input type="number" id="cep" th:field="*{cep}" required placeholder="Somente números (8 dígitos)">
+
+                <label for="numero">Número: </label>
+                <input type="number" id="numero" th:field="*{numero}" required
+                       placeholder="Digite o Número da Sua Residência">
+
+                <label for="telefone">Telefone: </label>
+                <input type="tel" id="telefone" th:field="*{telefone}" required
+                       inputmode="numeric" pattern="[0-9]{10,11}" title="Somente números, com DDD (10 ou 11 dígitos)"
+                       placeholder="DDD + Número, somente números">
+
+                <label for="observacao">Observação sobre o Endereço: </label>
+                <input type="text" id="observacao" th:field="*{observacao}" maxlength="200"
+                       placeholder="Ex. Ponto de Referência">
+
+                <input type="submit" value="Cadastrar">
+
+                <p th:if="${ok}" th:text="${ok}" class="mensagem-cadastro"></p>
+                <p th:if="${erro}" th:text="${erro}" class="mensagem-erro"></p>
+            </form>
+            <a th:href="@{/login}" class="botao-link">Voltar ao Login</a>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

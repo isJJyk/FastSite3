@@ -1,0 +1,212 @@
+
+:root {
+    --header-height: 60px;
+}
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background-color: #6c7076;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 24px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+    z-index: 1000;
+}
+
+.site-header-titulo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: black;
+    color: #000;
+    margin: 0;
+    min-height: 100vh;
+    padding-top: var(--header-height);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-block {
+    background-color: #fff;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 35px;
+}
+
+.login-block h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.login-block form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.login-block label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.mensagem-erro {
+    color: #d93025;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.mensagem-cadastro {
+    color: #0000FF;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.pagina-cadastro {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 1300px;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.pagina-cadastro .login-block {
+    flex: 0 0 420px;
+    box-sizing: border-box;
+}
+
+.lista-block {
+    flex: 1 1 0;
+    min-width: 0;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px 25px;
+    box-sizing: border-box;
+    max-height: calc(100vh - 48px - var(--header-height));
+    display: flex;
+    flex-direction: column;
+}
+
+.lista-block h2 {
+    font-size: 1.6rem;
+    margin: 0 0 18px;
+}
+
+.tabela-scroll {
+    overflow: auto;
+}
+
+.tabela-clientes {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.tabela-clientes th,
+.tabela-clientes td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabela-clientes thead th {
+    position: sticky;
+    top: 0;
+    background: #f1f1f1;
+}
+
+.tabela-clientes tbody tr:hover {
+    background: #f7f7ff;
+}
+
+.lista-vazia {
+    text-align: center !important;
+    color: #777;
+    padding: 20px 0 !important;
+}
+
+
+@media (max-width: 900px) {
+    .pagina-cadastro {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pagina-cadastro .login-block {
+        flex: none;
+        width: 100%;
+    }
+    .lista-block {
+        width: 100%;
+        max-height: none;
+    }
+}
+
+
+.botao-link {
+    display: block;
+    margin-top: 14px;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.botao-link:hover {
+    background: #000;
+    color: #fff;
+}
+
+.botao-voltar {
+    align-self: flex-start;
+    min-width: 120px;
+}
+
+.home-fullscreen {
+    position: fixed;
+    inset: var(--header-height) 0 0 0;
+    background: url("img/gregortristenacama.png") center / cover no-repeat,
+                linear-gradient(135deg, #1c1c1c, #4a4a4a);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+}
+
+.botao-home {
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 14px 32px;
+    border-radius: 30px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+}
+
+.botao-home:hover {
+    background: #000;
+    color: #fff;
+}
